@@ -593,9 +593,8 @@ img {
 }
 .modal-button {
     display: block;
-    padding: 0;
-    min-width: 30px;
-    min-height: 30px;
+    padding: 6px;
+    max-height: 33.2px;
     margin-left: auto;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
