@@ -122,8 +122,6 @@ img {
 .nav-list .link:hover,
 .nav-list .link:focus {
     color: var(--accent-color);
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list {
     display: flex;
@@ -148,8 +146,6 @@ img {
 .mail:focus,
 .tel:focus {
     color: var(--accent-color);
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-header {
     fill: currentColor;
@@ -218,8 +214,6 @@ img {
 .banner-button:focus {
     color: var(--secondary-text-color);
     background-color: var(--button-background-color);
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Features */
@@ -349,8 +343,6 @@ img {
 .social-list .link:focus {
     fill: var(--primary-white-color);
     background-color: var(--accent-color);
-
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Clients */
@@ -369,21 +361,19 @@ img {
     display: flex;
 }
 .clients-list .item {
-    /* flex-basis: calc((100% - 200px) / 6); */
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+    max-width: 170px;
 
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list .item:hover {
     border-color: var(--accent-color);
-
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list .link {
     display: block;
-    padding: 16px 30.6px;
+    padding: 16px 32px;
 
     fill: #afb1b8;
 
@@ -392,8 +382,6 @@ img {
 .clients-list .link:hover,
 .clients-list .link:focus {
     fill: var(--accent-color);
-
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -440,8 +428,6 @@ img {
 .contacts .link:hover,
 .contacts .link:focus {
     color: var(--accent-color);
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links {
     margin-top: 12px;
@@ -471,8 +457,6 @@ img {
 .social-footer-list .link:hover,
 .social-footer-list .link:focus {
     background-color: var(--accent-color);
-
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* PORTFOLIO */
 .filter-list {
@@ -507,8 +491,6 @@ img {
     background-color: var(--accent-color);
 
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .work-list {
     display: flex;
@@ -522,8 +504,6 @@ img {
 }
 .work-list .item:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .work-img {
     position: relative;
@@ -546,7 +526,6 @@ img {
 }
 .work-list .item:hover .work-overlay {
     transform: translateY(-100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .work-container {
@@ -570,4 +549,59 @@ img {
     
     font-size: 16px;
     line-height: 1.88;
+}
+
+/* Backdrop */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    padding: 8px;
+    width: 528px;
+    height: 581px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    background-color: var(--primary-white-color);
+
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button {
+    display: block;
+    padding: 0;
+    min-width: 30px;
+    min-height: 30px;
+    margin-left: auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    fill: var(--primary-black-color);
+    background-color: var(--primary-white-color);
+
+    cursor: pointer;
 }
