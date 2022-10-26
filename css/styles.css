@@ -628,17 +628,3 @@ img {
 
     cursor: pointer;
 }
-
-/* .modal-button {
-    display: block;
-    padding: 9px 9px 10px 10px;
-    max-height: 32px;
-    margin-left: auto;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-
-    fill: var(--primary-black-color);
-    background-color: var(--primary-white-color);
-
-    cursor: pointer;
-} */
